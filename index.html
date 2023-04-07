@@ -4,96 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Satisfy&display=swap" rel="stylesheet">
-    <title>Corazon</title>
-</head> 
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #0b1522;
-    }
-
-    .heart {
-        height: 250px;
-        width: 250px;
-        background-color:#FA58F4;
-        position: relative;
-        transform: rotate(45deg);
-        animation: palpitar 0.5s linear infinite alternate;
-
-    }
-
-   .contenido {
-    position: fixed;
-    margin-bottom: 50px;
-    text-align: center;
-    margin-top: -50px;
-
-
-
-   }
-
-   h1 {
-    color: white;
-    font-family: 'Fredoka One', cursive;
-    line-height: 1;
-    
-   }
-
-   h2 {
-    color: white;
-    font-family: 'Satisfy', cursive;
-   }
-        
-
-
-    @keyframes palpitar {
-        0%{transform: rotate(45deg) scale(1.10);}
-        80%{transform: rotate(45deg) scale(1.0);}
-        100%{transform: rotate(45deg) scale(.80);}
-    }
-
-    .heart::before {
-        content: "";
-        position: absolute;
-        height: 250px;
-        width: 250px;
-        background:#FA58F4;
-        right: 50%;
-        border-radius: 50%;
-
-    }
-    
-    .heart::after {
-        content: "";
-        position: absolute;
-        height: 250px;
-        width: 250px;
-        background:#FA58F4;
-        top: -50%;
-        border-radius: 50%;
-        z-index: 0;
-
-    }
-
-</style>
-
+    <title>Juego adivinacion</title>
+</head>
 <body>
-    <div class="heart"></div>
-    <div class="contenido">
-        <h1>HAPPY</h1>
-         <h1>VALENTINE'S DAY</h1>
-        <h2>I love you!!</h2>
-    </div>
-    
+
+    <h1>JUEGO ADIVINACION</h1>
+
+    <script>
+
+        function saltarLinea(){
+
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        }
+
+        function imprimir(frase) {
+
+            document.write(frase);
+            saltarLinea();
+        }
+
+        var numeroPensado = Math.round(Math.random()*10) ;
+        var numeroLanzado = parseInt(prompt("Ingrese un numero entre 0 y 10"));
+
+        if (numeroPensado == numeroLanzado) {
+            
+            imprimir("Usted acertó")
+        }
+
+        else {
+            
+            imprimir("Usted erró, el numero pensado era " + numeroPensado);
+        }
+
+
+
+
+
+    </script>
     
 </body>
 </html>
+
